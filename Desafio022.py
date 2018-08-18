@@ -1,0 +1,8 @@
+# usando strip()
+nome = str(input('Digite seu nome completo: '))
+print(nome.upper())
+print(nome.lower())
+let = nome.replace(' ', '')
+print(len(let))
+lista = nome.split()
+print(len(lista[0]))
