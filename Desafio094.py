@@ -1,7 +1,7 @@
 pessoa = dict()
 pessoas = list()
 idacima = dict()
-mulheres = dict()
+mulheres = 0
 idade = 0
 
 
@@ -12,7 +12,7 @@ while True:
     pessoas.append(pessoa.copy())
 
     if pessoa['sexo'] == 'F':
-        mulheres = pessoa.copy()
+        mulheres += 1
     
     conf = str(input('Deseja continuar[S/N]: '))[0].upper()
 
@@ -32,8 +32,13 @@ for p in pessoas:
 
 print(f'A Quantidade de pessoas foi {len(pessoas)}.')
 print(f'A media de idade é {media}')
-print(f'A quantidade de mulheres {mulheres.values()}.')
+print(f'A quantidade de mulheres é {mulheres} ', end=': ')
+for m in range(len(pessoas)):
+    if pessoas[m]['sexo'] == 'F':
+        print(f'{pessoas[m]["nome"]}', end=' ')
+    print('')
+
 if len(idacima) != 0:
     for k, v in idacima.items():
-        print(f'{k} = {v}.', end='; ')
+        print(f'{k} = {v}', end='; ')
 
